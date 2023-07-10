@@ -73,6 +73,14 @@ namespace Inventario {
         __Marshaller_inventario_MensajeRequest,
         __Marshaller_inventario_MensajeResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Inventario.SolicitudTextoPlano, global::Inventario.MensajeResponse> __Method_RecibirMensajeInventario = new grpc::Method<global::Inventario.SolicitudTextoPlano, global::Inventario.MensajeResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RecibirMensajeInventario",
+        __Marshaller_inventario_SolicitudTextoPlano,
+        __Marshaller_inventario_MensajeResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -95,6 +103,18 @@ namespace Inventario {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      /// <summary>
+      /// Nuevo RPC
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Inventario.MensajeResponse> RecibirMensajeInventario(global::Inventario.SolicitudTextoPlano request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -104,7 +124,8 @@ namespace Inventario {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_ObtenerTextoPlano, serviceImpl.ObtenerTextoPlano)
-          .AddMethod(__Method_EnviarMensajeWeb, serviceImpl.EnviarMensajeWeb).Build();
+          .AddMethod(__Method_EnviarMensajeWeb, serviceImpl.EnviarMensajeWeb)
+          .AddMethod(__Method_RecibirMensajeInventario, serviceImpl.RecibirMensajeInventario).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -116,6 +137,7 @@ namespace Inventario {
     {
       serviceBinder.AddMethod(__Method_ObtenerTextoPlano, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Inventario.SolicitudTextoPlano, global::Inventario.RespuestaTextoPlano>(serviceImpl.ObtenerTextoPlano));
       serviceBinder.AddMethod(__Method_EnviarMensajeWeb, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Inventario.MensajeRequest, global::Inventario.MensajeResponse>(serviceImpl.EnviarMensajeWeb));
+      serviceBinder.AddMethod(__Method_RecibirMensajeInventario, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Inventario.SolicitudTextoPlano, global::Inventario.MensajeResponse>(serviceImpl.RecibirMensajeInventario));
     }
 
   }
